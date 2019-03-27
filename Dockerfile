@@ -38,7 +38,8 @@ RUN sed -i 's/FCGI_USER="www-data"/FCGI_USER="git"/g' /etc/init.d/fcgiwrap && \
 
 # Install gitlist
 RUN mkdir -p /var/www && \
-    wget -q -O /var/www/gitlist.tar.gz https://github.com/klaussilveira/gitlist/releases/download/1.0.1/gitlist-1.0.1.tar.gz && \
+    wget -q -O --no-check-certificate /var/www/gitlist.tar.gz \
+        https://github.com/klaussilveira/gitlist/releases/download/1.0.1/gitlist-1.0.1.tar.gz && \
     tar -zxvf /var/www/gitlist.tar.gz -C /var/www && \
     chmod -R 777 /var/www/gitlist && \
     mkdir -p /var/www/gitlist/cache && \
