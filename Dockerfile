@@ -1,4 +1,4 @@
-# gitbox with gitlist v.0.5.0
+# gitbox with gitlist v.1.0.1
 # https://github.com/nmarus/docker-gitbox
 # Nicholas Marus <nmarus@gmail.com>
 
@@ -38,8 +38,8 @@ RUN sed -i 's/FCGI_USER="www-data"/FCGI_USER="git"/g' /etc/init.d/fcgiwrap && \
 
 # Install gitlist
 RUN mkdir -p /var/www && \
-    wget -q -O /var/www/gitlist-0.5.0.tar.gz https://s3.amazonaws.com/gitlist/gitlist-0.5.0.tar.gz && \
-    tar -zxvf /var/www/gitlist-0.5.0.tar.gz -C /var/www && \
+    wget -q -O /var/www/gitlist.tar.gz https://github.com/klaussilveira/gitlist/releases/download/1.0.1/gitlist-1.0.1.tar.gz && \
+    tar -zxvf /var/www/gitlist.tar.gz -C /var/www && \
     chmod -R 777 /var/www/gitlist && \
     mkdir -p /var/www/gitlist/cache && \
     chmod 777 /var/www/gitlist/cache
